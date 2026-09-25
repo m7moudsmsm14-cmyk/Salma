@@ -1,1 +1,3266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>For Salma ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050509;
+    color:white;
+    font-family:"Montserrat",sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.3;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1px),
+        radial-gradient(circle,rgba(255,255,255,.4) 1px,transparent 1px);
+
+    background-size:90px 90px,140px 140px;
+    background-position:10px 20px,50px 80px;
+
+    animation:stars 25s linear infinite;
+}
+
+@keyframes stars{
+    from{transform:translateY(0)}
+    to{transform:translateY(-90px)}
+}
+
+
+/* =====================================================
+   MAHMOUD SAMY SIGNATURE INTRO
+===================================================== */
+
+#signatureIntro{
+    position:fixed;
+
+    inset:0;
+
+    z-index:20000;
+
+    background:#000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:1;
+
+    transition:opacity 1.5s ease;
+
+    pointer-events:auto;
+}
+
+#signatureIntro.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.signature-name{
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(55px,12vw,110px);
+
+    color:white;
+
+    opacity:0;
+
+    transform:
+        translateY(20px)
+        scale(.96);
+
+    animation:
+        signatureAppear 2s ease forwards;
+}
+
+.signature-line{
+    margin-top:12px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#777;
+
+    opacity:0;
+
+    animation:
+        signatureSubAppear 1.5s
+        1.2s
+        ease
+        forwards;
+}
+
+@keyframes signatureAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(20px)
+            scale(.96);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+@keyframes signatureSubAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    background:#020204;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    transition:opacity 1s ease;
+}
+
+.intro-text{
+    text-align:center;
+    padding:30px;
+    transition:1s ease;
+}
+
+.intro-small{
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.intro-main{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(38px,8vw,75px);
+}
+
+.intro-heart{
+    color:#e6a8c8;
+}
+
+.intro-signature{
+    margin-top:25px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:32px;
+
+    color:#d9a9c5;
+}
+
+
+/* old image */
+
+.intro-photo{
+    position:absolute;
+
+    width:min(75vw,420px);
+    height:min(75vw,520px);
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    transform:scale(.82);
+
+    filter:blur(8px);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.7);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.8s ease,
+        filter 1.8s ease;
+}
+
+.intro-photo.show{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+}
+
+.intro-photo.leave{
+    opacity:0;
+    transform:scale(1.18);
+    filter:blur(10px);
+}
+
+
+/* love screen */
+
+.love-screen{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    background:
+        radial-gradient(circle,rgba(160,70,110,.16),transparent 50%),
+        #020204;
+
+    transition:opacity .8s ease;
+}
+
+.love-screen.show{
+    opacity:1;
+}
+
+.love-title{
+    font-family:"Great Vibes",cursive;
+    font-size:clamp(45px,10vw,100px);
+}
+
+.love-sub{
+    margin-top:20px;
+
+    color:#d5b5c6;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+    letter-spacing:2px;
+
+    opacity:0;
+
+    animation:fadeSub 1.5s 1.5s forwards;
+}
+
+.love-signature{
+    margin-top:18px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:30px;
+
+    color:#d9a9c5;
+
+    opacity:0;
+
+    animation:
+        loveSignature 1.5s 2s forwards;
+}
+
+@keyframes fadeSub{
+    to{opacity:1}
+}
+
+@keyframes loveSignature{
+    to{opacity:1}
+}
+
+
+/* new photo */
+
+.new-photo{
+    position:absolute;
+
+    width:min(78vw,430px);
+    height:min(78vw,540px);
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    filter:brightness(.5) blur(5px);
+
+    box-shadow:0 30px 90px rgba(0,0,0,.8);
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.8s ease,
+        filter 1.8s ease;
+}
+
+.new-photo.show{
+    opacity:1;
+    transform:scale(1);
+    filter:brightness(1) blur(0);
+}
+
+.intro-next{
+    position:absolute;
+    bottom:45px;
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.intro-next:hover{
+    background:white;
+    color:black;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+#site{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+
+#site.visible{
+    opacity:1;
+}
+
+
+/* header */
+
+header{
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:22px 6%;
+
+    background:rgba(5,5,9,.55);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:20px;
+}
+
+.logo span{
+    color:#e8a7c9;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+
+    font-size:12px;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+
+/* hero */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:100px 20px 60px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.eyebrow{
+    text-transform:uppercase;
+    letter-spacing:5px;
+
+    font-size:11px;
+    color:#999;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(70px,15vw,150px);
+
+    font-weight:400;
+
+    line-height:.9;
+
+    margin-bottom:30px;
+}
+
+.hero p{
+    color:#aaa;
+
+    max-width:550px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+.hero-signature{
+    margin-top:25px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:32px;
+
+    color:#d9a9c5;
+}
+
+.hero-btn{
+    margin-top:35px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:transparent;
+
+    color:white;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:white;
+    color:#050509;
+}
+
+
+/* sections */
+
+section{
+    padding:110px 7%;
+}
+
+.section-label{
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+    font-size:10px;
+
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(40px,7vw,75px);
+
+    font-weight:400;
+
+    margin-bottom:30px;
+}
+
+
+/* story */
+
+.story{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.story-text{
+    color:#bbb;
+
+    line-height:2.1;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:22px;
+}
+
+.story-signature{
+    margin-top:30px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:34px;
+
+    color:#d9a9c5;
+}
+
+
+/* song */
+
+.song{
+    text-align:center;
+}
+
+.song-box{
+    max-width:600px;
+
+    margin:30px auto;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.song-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+.song-signature{
+    margin-top:20px;
+
+    color:#777;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:25px;
+}
+
+audio{
+    width:100%;
+}
+
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+.memories{
+    max-width:1200px;
+    margin:auto;
+}
+
+.memory-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-top:40px;
+}
+
+.memory{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    height:400px;
+
+    cursor:pointer;
+
+    background:#111;
+}
+
+.memory img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+}
+
+.memory:hover img{
+    transform:scale(1.08);
+}
+
+.memory-caption{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:40px 20px 20px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.85)
+    );
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:22px;
+}
+
+
+/* =====================================================
+   PUZZLE
+===================================================== */
+
+.puzzle-section{
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.puzzle-intro{
+    max-width:620px;
+
+    margin:0 auto 35px;
+
+    color:#999;
+
+    line-height:1.8;
+}
+
+.locked-memory{
+    max-width:700px;
+
+    margin:40px auto;
+
+    padding:35px 20px;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.01)
+        );
+}
+
+.lock-icon{
+    font-size:45px;
+
+    margin-bottom:15px;
+
+    transition:transform .5s ease;
+}
+
+.locked-memory h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
+
+    font-weight:400;
+}
+
+.locked-memory p{
+    color:#888;
+
+    margin-top:10px;
+
+    font-size:13px;
+}
+
+
+/* puzzle */
+
+#puzzle{
+    width:min(90vw,450px);
+
+    aspect-ratio:1/1;
+
+    margin:30px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    grid-template-rows:repeat(3,1fr);
+
+    gap:4px;
+
+    padding:4px;
+
+    background:#111;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    transition:
+        opacity .8s ease,
+        transform 1s ease;
+}
+
+.puzzle-piece{
+    position:relative;
+
+    cursor:grab;
+
+    background-image:url("IMG_0786.jpeg");
+
+    background-size:300% 300%;
+
+    border-radius:3px;
+
+    min-width:0;
+    min-height:0;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.puzzle-piece:active{
+    cursor:grabbing;
+}
+
+.puzzle-piece.selected{
+    outline:3px solid #e8a7c9;
+
+    outline-offset:-3px;
+
+    transform:scale(.96);
+}
+
+.puzzle-piece.dragging{
+    opacity:.45;
+}
+
+.puzzle-piece.correct{
+    box-shadow:
+        inset 0 0 0 2px rgba(255,255,255,.5);
+}
+
+
+/* puzzle controls */
+
+.puzzle-controls{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.puzzle-btn{
+    border:1px solid rgba(255,255,255,.2);
+
+    background:transparent;
+
+    color:white;
+
+    padding:13px 23px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.puzzle-btn:hover{
+    background:white;
+    color:black;
+}
+
+.puzzle-status{
+    min-height:25px;
+
+    color:#aaa;
+
+    margin-top:18px;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   SECRET TRANSITION
+===================================================== */
+
+#secretTransition{
+    position:fixed;
+
+    inset:0;
+
+    z-index:8000;
+
+    background:#000;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 1s ease;
+}
+
+#secretTransition.active{
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.secret-message{
+    padding:30px;
+
+    max-width:700px;
+}
+
+.secret-line{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(28px,6vw,55px);
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.secret-line.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.secret-small{
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    color:#777;
+
+    margin-bottom:25px;
+
+    opacity:0;
+
+    transition:1s;
+}
+
+.secret-small.show{
+    opacity:1;
+}
+
+
+/* =====================================================
+   SECRET REVEAL
+===================================================== */
+
+#secretReveal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:8100;
+
+    background:#000;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 1s ease;
+
+    padding:25px;
+}
+
+#secretReveal.active{
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.secret-photo{
+    width:min(88vw,500px);
+
+    max-height:65vh;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    filter:brightness(.5) blur(8px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 2s ease,
+        filter 2s ease;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.9);
+}
+
+.secret-photo.show{
+    opacity:1;
+
+    transform:scale(1);
+
+    filter:brightness(1) blur(0);
+}
+
+.secret-reveal-text{
+    max-width:650px;
+
+    margin-top:25px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(20px,4vw,30px);
+
+    line-height:1.6;
+
+    color:#ccc;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.secret-reveal-text.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.secret-badge{
+    margin-top:18px;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#d9a9c5;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    transition:1s;
+}
+
+.secret-badge.show{
+    opacity:1;
+}
+
+.secret-signature{
+    margin-top:15px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:30px;
+
+    color:#d9a9c5;
+
+    opacity:0;
+
+    transition:1s;
+}
+
+.secret-signature.show{
+    opacity:1;
+}
+
+.continue-btn{
+    margin-top:28px;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    background:transparent;
+
+    color:white;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        background .3s,
+        color .3s;
+}
+
+.continue-btn.show{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.continue-btn:hover{
+    background:white;
+
+    color:#000;
+}
+
+
+/* =====================================================
+   UNLOCKED MEMORY
+===================================================== */
+
+#unlockedMemory{
+    display:none;
+
+    margin:55px auto 0;
+
+    animation:memoryReveal 1.5s ease forwards;
+}
+
+#unlockedMemory.show{
+    display:block;
+}
+
+@keyframes memoryReveal{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(30px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.unlocked-title{
+    font-family:"Great Vibes",cursive;
+
+    font-size:55px;
+
+    margin-bottom:20px;
+}
+
+.unlocked-photo{
+    width:min(90vw,500px);
+
+    max-height:650px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.7);
+}
+
+.unlocked-text{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:23px;
+
+    color:#bbb;
+
+    max-width:600px;
+
+    margin:25px auto;
+
+    line-height:1.7;
+}
+
+.unlocked-signature{
+    margin-top:20px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:32px;
+
+    color:#d9a9c5;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+    max-width:800px;
+
+    margin:auto;
+}
+
+.timeline-item{
+    border-left:1px solid rgba(255,255,255,.15);
+
+    padding:
+        0
+        0
+        55px
+        35px;
+
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"♡";
+
+    position:absolute;
+
+    left:-11px;
+
+    top:0;
+
+    width:20px;
+
+    height:20px;
+
+    background:#050509;
+
+    color:#e8a7c9;
+
+    text-align:center;
+}
+
+.timeline-date{
+    color:#e8a7c9;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.timeline-item h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    font-weight:400;
+}
+
+.timeline-item p{
+    color:#888;
+
+    margin-top:10px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    text-align:center;
+
+    min-height:90vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.final h2{
+    font-family:"Great Vibes",cursive;
+
+    font-size:clamp(60px,12vw,110px);
+
+    font-weight:400;
+}
+
+.final p{
+    max-width:600px;
+
+    color:#999;
+
+    line-height:2;
+
+    margin:
+        20px auto
+        35px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:22px;
+}
+
+.final-signature{
+    font-family:"Great Vibes",cursive;
+
+    font-size:36px;
+
+    color:#d9a9c5;
+
+    margin-bottom:25px;
+}
+
+.replay-btn{
+    border:1px solid rgba(255,255,255,.2);
+
+    background:transparent;
+
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.replay-btn:hover{
+    background:white;
+
+    color:black;
+}
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    color:#555;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+#lightbox{
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+#lightbox.show{
+    display:flex;
+}
+
+#lightbox img{
+    max-width:95vw;
+
+    max-height:90vh;
+
+    border-radius:15px;
+}
+
+.close-lightbox{
+    position:absolute;
+
+    top:25px;
+
+    right:30px;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    header{
+        padding:18px 5%;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:9px;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .memory{
+        height:260px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .logo{
+        font-size:16px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory{
+        height:420px;
+    }
+
+    .intro-photo,
+    .new-photo{
+        width:78vw;
+
+        height:100vw;
+
+        max-height:550px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MAHMOUD SAMY FIRST SCREEN
+===================================================== -->
+
+<div id="signatureIntro">
+
+    <div class="signature-name">
+        Mahmoud Samy
+    </div>
+
+    <div class="signature-line">
+        Made with love ♡
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CINEMATIC INTRO
+===================================================== -->
+
+<div id="intro">
+
+    <div class="intro-text" id="introText">
+
+        <div class="intro-small">
+            For someone very special...
+        </div>
+
+        <div class="intro-main">
+            I made something for you
+            <span class="intro-heart">♡</span>
+        </div>
+
+        <div class="intro-signature">
+            By Mahmoud Samy
+        </div>
+
+    </div>
+
+
+    <img
+        id="oldPhoto"
+        class="intro-photo"
+        src="IMG_0774.jpeg"
+        alt="A special memory"
+    >
+
+
+    <div class="love-screen" id="loveScreen">
+
+        <div>
+
+            <div class="love-title">
+                I love you Salma
+            </div>
+
+            <div class="love-sub">
+                always & forever ♡
+            </div>
+
+            <div class="love-signature">
+                By Mahmoud Samy
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <img
+        id="newPhoto"
+        class="new-photo"
+        src="IMG_0786.jpeg"
+        alt="A special photo"
+    >
+
+
+    <button
+        class="intro-next"
+        id="introNext"
+    >
+        Okay... now keep going →
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div id="site">
+
+
+<header>
+
+    <div class="logo">
+        ♥ From Mahmoud Samy to <span>Salma</span> ♥
+    </div>
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#story">
+            For You
+        </a>
+
+        <a href="#memories">
+            Memories
+        </a>
+
+        <a href="#puzzleSection">
+            Secret
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            A little something, made only for you
+        </div>
+
+        <h1>
+            Salma
+        </h1>
+
+        <p>
+            Some things are too special to be said in a message.
+            So I made you a little place instead.
+        </p>
+
+        <div class="hero-signature">
+            By Mahmoud Samy
+        </div>
+
+        <button
+            class="hero-btn"
+            onclick="document.getElementById('story').scrollIntoView()"
+        >
+            Open your surprise ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- STORY -->
+
+<section id="story">
+
+    <div class="story">
+
+        <div class="section-label">
+            For You
+        </div>
+
+        <h2 class="section-title">
+            A little piece of my heart.
+        </h2>
+
+        <p class="story-text">
+
+            I don't really know how to put everything
+            I feel into words.
+
+            Maybe that's why I made this little website.
+
+            Every picture, every word, and every little detail
+            here is just another way of saying something
+            very simple...
+
+            I'm really lucky to have you.
+
+            <br><br>
+
+            And no matter how many times I say it,
+
+            I love you, Salma. ♡
+
+        </p>
+
+        <div class="story-signature">
+            — Mahmoud Samy
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SONG -->
+
+<section class="song">
+
+    <div class="section-label">
+        Our song
+    </div>
+
+    <h2 class="section-title">
+        Press play.
+    </h2>
+
+    <div class="song-box">
+
+        <div class="song-title">
+            A song for you ♡
+        </div>
+
+        <audio controls>
+
+            <source
+                src="special-song.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+        <div class="song-signature">
+            Mahmoud Samy ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section id="memories">
+
+    <div class="memories">
+
+        <div class="section-label">
+            Memories
+        </div>
+
+        <h2 class="section-title">
+            Little moments.
+        </h2>
+
+
+        <div class="memory-grid">
+
+
+            <div class="memory">
+
+                <img
+                    src="IMG_8886.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    One of my favorites ♡
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="memory-2.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    A moment worth keeping.
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="memory-3.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    Just us.
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="memory-4.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    Another little memory.
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="IMG_8837.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    ♡
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="IMG_8843.jpeg"
+                    alt="Memory"
+                >
+
+                <div class="memory-caption">
+                    Forever saved.
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUZZLE
+===================================================== -->
+
+<section id="puzzleSection">
+
+    <div class="puzzle-section">
+
+
+        <div class="section-label">
+            One more thing...
+        </div>
+
+
+        <h2 class="section-title">
+            A secret memory.
+        </h2>
+
+
+        <p class="puzzle-intro">
+
+            There's one more memory hiding here...
+
+            <br>
+
+            But I don't think I should make it
+            that easy for you.
+
+            <br><br>
+
+            Put the pieces together to unlock it. ♡
+
+        </p>
+
+
+        <div class="locked-memory">
+
+
+            <div
+                class="lock-icon"
+                id="lockIcon"
+            >
+                🔒
+            </div>
+
+
+            <h3 id="puzzleTitle">
+                A memory is waiting for you...
+            </h3>
+
+
+            <p id="puzzleHint">
+                Arrange the 9 pieces in the correct order.
+            </p>
+
+
+            <div id="puzzle"></div>
+
+
+            <div class="puzzle-controls">
+
+                <button
+                    class="puzzle-btn"
+                    id="shuffleBtn"
+                    type="button"
+                >
+                    Shuffle ↻
+                </button>
+
+
+                <button
+                    class="puzzle-btn"
+                    id="resetBtn"
+                    type="button"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <div
+                class="puzzle-status"
+                id="puzzleStatus"
+            >
+                Tap two pieces to swap them.
+            </div>
+
+
+            <div id="unlockedMemory">
+
+                <div class="unlocked-title">
+                    Memory unlocked ♡
+                </div>
+
+                <img
+                    class="unlocked-photo"
+                    src="IMG_0786.jpeg"
+                    alt="Secret memory"
+                >
+
+                <p class="unlocked-text">
+
+                    Some memories are worth solving for.
+
+                    <br><br>
+
+                    And this one...
+
+                    I wanted you to find yourself. ♡
+
+                </p>
+
+                <div class="unlocked-signature">
+                    — Mahmoud Samy
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section>
+
+    <div class="timeline">
+
+
+        <div class="section-label">
+            Our story
+        </div>
+
+
+        <h2 class="section-title">
+            Little chapters.
+        </h2>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Chapter 01
+            </div>
+
+            <h3>
+                The beginning.
+            </h3>
+
+            <p>
+                Somewhere along the way,
+                you became someone very special to me.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Chapter 02
+            </div>
+
+            <h3>
+                More memories.
+            </h3>
+
+            <p>
+                And somehow the little moments
+                became my favorite ones.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Chapter 03
+            </div>
+
+            <h3>
+                Still you.
+            </h3>
+
+            <p>
+                After everything,
+                you're still the person I want
+                to make more memories with.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Signature
+            </div>
+
+            <h3>
+                Always from me.
+            </h3>
+
+            <p>
+                Every little detail here was made
+                especially for you.
+            </p>
+
+            <div class="story-signature">
+                — Mahmoud Samy
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+
+    <div class="section-label">
+        Before you leave...
+    </div>
+
+
+    <h2>
+        Look at me.
+    </h2>
+
+
+    <p>
+
+        I love you, Salma.
+
+        <br><br>
+
+        More than this little website could ever say.
+
+        And if you ever forget...
+
+        come back here. ♡
+
+    </p>
+
+    <div class="final-signature">
+        Mahmoud Samy
+    </div>
+
+
+    <button
+        class="replay-btn"
+        id="replayBtn"
+    >
+        Replay everything ♡
+    </button>
+
+
+</section>
+
+
+<footer>
+    Made with love by Mahmoud Samy, just for Salma ♡
+</footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SECRET TRANSITION
+===================================================== -->
+
+<div id="secretTransition">
+
+    <div class="secret-message">
+
+        <div
+            class="secret-small"
+            id="secretSmall"
+        >
+            Puzzle complete
+        </div>
+
+
+        <div
+            class="secret-line"
+            id="secretLine1"
+        >
+            You found it... ♡
+        </div>
+
+
+        <div
+            class="secret-line"
+            id="secretLine2"
+        >
+            But that's not the surprise.
+        </div>
+
+
+        <div
+            class="secret-line"
+            id="secretLine3"
+        >
+            There's one last thing
+            I want you to see.
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SECRET REVEAL
+===================================================== -->
+
+<div id="secretReveal">
+
+
+    <img
+        class="secret-photo"
+        id="secretPhoto"
+        src="IMG_0786.jpeg"
+        alt="Secret memory"
+    >
+
+
+    <div
+        class="secret-reveal-text"
+        id="secretRevealText"
+    >
+
+        If I could keep one moment forever...
+
+        <br>
+
+        it would be a moment with you. ♡
+
+    </div>
+
+
+    <div
+        class="secret-badge"
+        id="secretBadge"
+    >
+        1 secret unlocked
+    </div>
+
+
+    <div
+        class="secret-signature"
+        id="secretSignature"
+    >
+        — Mahmoud Samy
+    </div>
+
+
+    <button
+        class="continue-btn"
+        id="continueBtn"
+    >
+        Continue →
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div id="lightbox">
+
+    <div class="close-lightbox">
+        ×
+    </div>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Memory"
+    >
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   SIGNATURE INTRO
+===================================================== */
+
+const signatureIntro =
+    document.getElementById(
+        "signatureIntro"
+    );
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+const intro =
+    document.getElementById("intro");
+
+const introText =
+    document.getElementById("introText");
+
+const oldPhoto =
+    document.getElementById("oldPhoto");
+
+const loveScreen =
+    document.getElementById("loveScreen");
+
+const newPhoto =
+    document.getElementById("newPhoto");
+
+const introNext =
+    document.getElementById("introNext");
+
+const site =
+    document.getElementById("site");
+
+
+function startIntro(){
+
+    intro.style.display="flex";
+
+    intro.style.opacity="1";
+
+    introText.style.opacity="1";
+
+    oldPhoto.classList.remove(
+        "show",
+        "leave"
+    );
+
+    loveScreen.classList.remove("show");
+
+    newPhoto.classList.remove("show");
+
+    introNext.style.opacity="0";
+
+    introNext.style.transform=
+        "translateY(15px)";
+
+
+    setTimeout(()=>{
+
+        introText.style.opacity="0";
+
+    },3000);
+
+
+    setTimeout(()=>{
+
+        oldPhoto.classList.add("show");
+
+    },3200);
+
+
+    setTimeout(()=>{
+
+        oldPhoto.classList.add("leave");
+
+    },4900);
+
+
+    setTimeout(()=>{
+
+        loveScreen.classList.add("show");
+
+    },5400);
+
+
+    setTimeout(()=>{
+
+        loveScreen.classList.remove("show");
+
+    },6900);
+
+
+    setTimeout(()=>{
+
+        newPhoto.classList.add("show");
+
+    },7100);
+
+
+    setTimeout(()=>{
+
+        introNext.style.opacity="1";
+
+        introNext.style.transform=
+            "translateY(0)";
+
+    },8200);
+
+}
+
+
+introNext.addEventListener(
+    "click",
+    ()=>{
+
+        newPhoto.classList.remove("show");
+
+        intro.style.opacity="0";
+
+
+        setTimeout(()=>{
+
+            intro.style.display="none";
+
+            site.classList.add("visible");
+
+            window.scrollTo({
+                top:0,
+                behavior:"instant"
+            });
+
+        },1000);
+
+    }
+);
+
+
+
+/* =====================================================
+   PUZZLE
+===================================================== */
+
+const puzzle =
+    document.getElementById("puzzle");
+
+const shuffleBtn =
+    document.getElementById("shuffleBtn");
+
+const resetBtn =
+    document.getElementById("resetBtn");
+
+const puzzleStatus =
+    document.getElementById("puzzleStatus");
+
+const lockIcon =
+    document.getElementById("lockIcon");
+
+const puzzleTitle =
+    document.getElementById("puzzleTitle");
+
+const puzzleHint =
+    document.getElementById("puzzleHint");
+
+
+const secretTransition =
+    document.getElementById(
+        "secretTransition"
+    );
+
+const secretReveal =
+    document.getElementById(
+        "secretReveal"
+    );
+
+const secretSmall =
+    document.getElementById(
+        "secretSmall"
+    );
+
+const secretLine1 =
+    document.getElementById(
+        "secretLine1"
+    );
+
+const secretLine2 =
+    document.getElementById(
+        "secretLine2"
+    );
+
+const secretLine3 =
+    document.getElementById(
+        "secretLine3"
+    );
+
+const secretPhoto =
+    document.getElementById(
+        "secretPhoto"
+    );
+
+const secretRevealText =
+    document.getElementById(
+        "secretRevealText"
+    );
+
+const secretBadge =
+    document.getElementById(
+        "secretBadge"
+    );
+
+const secretSignature =
+    document.getElementById(
+        "secretSignature"
+    );
+
+const continueBtn =
+    document.getElementById(
+        "continueBtn"
+    );
+
+
+let pieces=[];
+
+let selectedIndex=null;
+
+let puzzleUnlocked=false;
+
+
+/*
+    Correct order:
+
+    0 1 2
+    3 4 5
+    6 7 8
+*/
+
+const solvedOrder=[
+    0,1,2,
+    3,4,5,
+    6,7,8
+];
+
+
+
+function createPuzzle(){
+
+    pieces=[
+        ...solvedOrder
+    ];
+
+    shufflePieces();
+
+    renderPuzzle();
+
+}
+
+
+
+function shufflePieces(){
+
+    do{
+
+        for(
+            let i=pieces.length-1;
+            i>0;
+            i--
+        ){
+
+            const random=
+                Math.floor(
+                    Math.random()*(i+1)
+                );
+
+
+            [
+                pieces[i],
+                pieces[random]
+            ]=[
+                pieces[random],
+                pieces[i]
+            ];
+
+        }
+
+    }
+    while(isSolved());
+
+}
+
+
+
+function renderPuzzle(){
+
+    puzzle.innerHTML="";
+
+
+    pieces.forEach(
+        (pieceNumber,position)=>{
+
+            const piece=
+                document.createElement("div");
+
+
+            piece.className=
+                "puzzle-piece";
+
+
+            const row=
+                Math.floor(
+                    pieceNumber/3
+                );
+
+
+            const col=
+                pieceNumber%3;
+
+
+            piece.style.backgroundPosition=
+                `${col*50}% ${row*50}%`;
+
+
+            piece.dataset.position=
+                position;
+
+
+            piece.draggable=true;
+
+
+            piece.addEventListener(
+                "dragstart",
+                ()=>{
+                    piece.classList.add(
+                        "dragging"
+                    );
+                }
+            );
+
+
+            piece.addEventListener(
+                "dragend",
+                ()=>{
+                    piece.classList.remove(
+                        "dragging"
+                    );
+                }
+            );
+
+
+            piece.addEventListener(
+                "dragover",
+                event=>{
+                    event.preventDefault();
+                }
+            );
+
+
+            piece.addEventListener(
+                "drop",
+                event=>{
+
+                    event.preventDefault();
+
+
+                    const dragged=
+                        document.querySelector(
+                            ".dragging"
+                        );
+
+
+                    if(!dragged){
+                        return;
+                    }
+
+
+                    const from=
+                        Number(
+                            dragged.dataset.position
+                        );
+
+
+                    const to=position;
+
+
+                    if(
+                        Number.isInteger(from) &&
+                        from!==to
+                    ){
+
+                        swapPieces(
+                            from,
+                            to
+                        );
+
+                    }
+
+                }
+            );
+
+
+            piece.addEventListener(
+                "click",
+                ()=>{
+                    handlePieceClick(
+                        position,
+                        piece
+                    );
+                }
+            );
+
+
+            puzzle.appendChild(piece);
+
+        }
+    );
+
+}
+
+
+
+function handlePieceClick(
+    position,
+    element
+){
+
+    if(puzzleUnlocked){
+        return;
+    }
+
+
+    if(selectedIndex===null){
+
+        selectedIndex=position;
+
+        element.classList.add(
+            "selected"
+        );
+
+        puzzleStatus.textContent=
+            "Now choose another piece.";
+
+        return;
+
+    }
+
+
+    if(
+        selectedIndex===position
+    ){
+
+        element.classList.remove(
+            "selected"
+        );
+
+        selectedIndex=null;
+
+        puzzleStatus.textContent=
+            "Choose a piece.";
+
+        return;
+
+    }
+
+
+    swapPieces(
+        selectedIndex,
+        position
+    );
+
+
+    selectedIndex=null;
+
+}
+
+
+
+function swapPieces(a,b){
+
+    [
+        pieces[a],
+        pieces[b]
+    ]=[
+        pieces[b],
+        pieces[a]
+    ];
+
+
+    renderPuzzle();
+
+
+    checkPuzzle();
+
+}
+
+
+
+function isSolved(){
+
+    return pieces.every(
+        (piece,index)=>
+            piece===
+            solvedOrder[index]
+    );
+
+}
+
+
+
+function checkPuzzle(){
+
+    if(isSolved()){
+
+        unlockPuzzle();
+
+        return;
+
+    }
+
+
+    const correct=
+        pieces.filter(
+            (piece,index)=>
+                piece===
+                solvedOrder[index]
+        ).length;
+
+
+    puzzleStatus.textContent=
+        `${correct} / 9 pieces are in the right place ♡`;
+
+}
+
+
+
+/* =====================================================
+   PUZZLE COMPLETE
+===================================================== */
+
+function unlockPuzzle(){
+
+    if(puzzleUnlocked){
+        return;
+    }
+
+    puzzleUnlocked=true;
+
+
+    puzzleStatus.textContent=
+        "You did it... ♡";
+
+
+    const puzzlePieces=
+        document.querySelectorAll(
+            ".puzzle-piece"
+        );
+
+
+    puzzlePieces.forEach(
+        piece=>{
+            piece.classList.add(
+                "correct"
+            );
+        }
+    );
+
+
+    setTimeout(()=>{
+
+        startSecretSequence();
+
+    },1200);
+
+}
+
+
+
+/* =====================================================
+   SECRET CINEMATIC SEQUENCE
+===================================================== */
+
+function startSecretSequence(){
+
+    puzzle.style.transform=
+        "scale(1.08)";
+
+    puzzle.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+        secretTransition.classList.add(
+            "active"
+        );
+
+    },500);
+
+
+    setTimeout(()=>{
+
+        secretSmall.classList.add(
+            "show"
+        );
+
+    },1000);
+
+
+    setTimeout(()=>{
+
+        secretLine1.classList.add(
+            "show"
+        );
+
+    },1900);
+
+
+    setTimeout(()=>{
+
+        secretLine1.classList.remove(
+            "show"
+        );
+
+    },3500);
+
+
+    setTimeout(()=>{
+
+        secretLine2.classList.add(
+            "show"
+        );
+
+    },3900);
+
+
+    setTimeout(()=>{
+
+        secretLine2.classList.remove(
+            "show"
+        );
+
+    },5400);
+
+
+    setTimeout(()=>{
+
+        secretLine3.classList.add(
+            "show"
+        );
+
+    },5800);
+
+
+    setTimeout(()=>{
+
+        secretTransition.classList.remove(
+            "active"
+        );
+
+        secretLine3.classList.remove(
+            "show"
+        );
+
+        secretSmall.classList.remove(
+            "show"
+        );
+
+
+        secretReveal.classList.add(
+            "active"
+        );
+
+
+        setTimeout(()=>{
+
+            secretPhoto.classList.add(
+                "show"
+            );
+
+        },500);
+
+
+        setTimeout(()=>{
+
+            secretRevealText.classList.add(
+                "show"
+            );
+
+        },1800);
+
+
+        setTimeout(()=>{
+
+            secretBadge.classList.add(
+                "show"
+            );
+
+        },2900);
+
+
+        setTimeout(()=>{
+
+            secretSignature.classList.add(
+                "show"
+            );
+
+        },3300);
+
+
+        setTimeout(()=>{
+
+            continueBtn.classList.add(
+                "show"
+            );
+
+        },4000);
+
+
+    },7000);
+
+}
+
+
+
+/* =====================================================
+   CONTINUE AFTER SECRET
+===================================================== */
+
+continueBtn.addEventListener(
+    "click",
+    ()=>{
+
+        secretReveal.classList.remove(
+            "active"
+        );
+
+
+        setTimeout(()=>{
+
+            puzzle.style.transform=
+                "scale(1)";
+
+            puzzle.style.opacity="1";
+
+
+            const unlockedMemory=
+                document.getElementById(
+                    "unlockedMemory"
+                );
+
+
+            unlockedMemory.classList.add(
+                "show"
+            );
+
+
+            lockIcon.textContent="🔓";
+
+
+            puzzleTitle.textContent=
+                "The memory you unlocked.";
+
+
+            puzzleHint.textContent=
+                "You found the one I was hiding for you. ♡";
+
+
+            puzzleStatus.textContent=
+                "1 secret unlocked ♡";
+
+
+            setTimeout(()=>{
+
+                unlockedMemory.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            },300);
+
+
+        },800);
+
+    }
+);
+
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+shuffleBtn.addEventListener(
+    "click",
+    ()=>{
+
+        if(puzzleUnlocked){
+            return;
+        }
+
+
+        pieces=[
+            ...solvedOrder
+        ];
+
+
+        shufflePieces();
+
+
+        renderPuzzle();
+
+
+        selectedIndex=null;
+
+
+        puzzleStatus.textContent=
+            "Okay... try again. ♡";
+
+    }
+);
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+resetBtn.addEventListener(
+    "click",
+    ()=>{
+
+        if(puzzleUnlocked){
+            return;
+        }
+
+
+        pieces=[
+            ...solvedOrder
+        ];
+
+
+        renderPuzzle();
+
+
+        selectedIndex=null;
+
+
+        puzzleStatus.textContent=
+            "Tap two pieces to swap them.";
+
+    }
+);
+
+
+
+/* =====================================================
+   REPLAY
+===================================================== */
+
+document
+.getElementById("replayBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+
+        setTimeout(()=>{
+
+            intro.style.display="flex";
+
+            startIntro();
+
+        },800);
+
+    }
+);
+
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+const lightbox=
+    document.getElementById(
+        "lightbox"
+    );
+
+const lightboxImage=
+    document.getElementById(
+        "lightboxImage"
+    );
+
+const closeLightbox=
+    document.querySelector(
+        ".close-lightbox"
+    );
+
+
+document
+.querySelectorAll(".memory img")
+.forEach(
+    img=>{
+
+        img.addEventListener(
+            "click",
+            ()=>{
+
+                lightboxImage.src=
+                    img.src;
+
+                lightbox.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+closeLightbox.addEventListener(
+    "click",
+    ()=>{
+        lightbox.classList.remove(
+            "show"
+        );
+    }
+);
+
+
+lightbox.addEventListener(
+    "click",
+    event=>{
+
+        if(
+            event.target===
+            lightbox
+        ){
+
+            lightbox.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+createPuzzle();
+
+
+window.addEventListener(
+    "load",
+    ()=>{
+
+        /*
+            First:
+            Black screen + Mahmoud Samy
+
+            Then:
+            Salma's cinematic intro
+        */
+
+        setTimeout(()=>{
+
+            signatureIntro.classList.add(
+                "hide"
+            );
+
+        },3500);
+
+
+        setTimeout(()=>{
+
+            signatureIntro.style.display="none";
+
+            startIntro();
+
+        },5000);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
